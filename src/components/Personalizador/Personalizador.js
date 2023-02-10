@@ -35,7 +35,7 @@ export default function Personalizador({ modelo, setPaso }) {
             height={700}
             alt="Guante"
             quality={20}
-            placeholder="blur"
+            priority={true}
           />
 
           <Image
@@ -45,7 +45,7 @@ export default function Personalizador({ modelo, setPaso }) {
             height={700}
             alt="Guante"
             quality={20}
-            placeholder="blur"
+            priority={true}
           />
 
           <Image
@@ -55,7 +55,7 @@ export default function Personalizador({ modelo, setPaso }) {
             height={700}
             alt="Guante"
             quality={20}
-            placeholder="blur"
+            priority={true}
           />
 
           <Image
@@ -65,7 +65,7 @@ export default function Personalizador({ modelo, setPaso }) {
             height={700}
             alt="Guante"
             quality={20}
-            placeholder="blur"
+            priority={true}
           />
         </div>
         <div className="flex flex-col justify-center items-center w-1/2 px-40">
