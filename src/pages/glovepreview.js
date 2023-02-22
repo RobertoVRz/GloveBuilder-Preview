@@ -2,7 +2,14 @@ import { useState } from "react";
 import Head from "next/head";
 import Personalizador from "@/components/Personalizador/Personalizador";
 import SeleccionadorModelo from "@/components/SeleccionadorModelo/SeleccionadorModelo";
-import { SELECCIONAR_BASE, SELECCIONAR_COLOR_BASE } from "@/constants";
+import SeleccionadorPalma from "@/components/SeleccionadorPalma/SeleccionadorPalma";
+import SeleccionadorLatigo from "@/components/SeleccionadorLatigo/SeleccionadorLatigo";
+import {
+  SELECCIONAR_BASE,
+  SELECCIONAR_PALMA,
+  SELECCIONAR_LATIGO,
+  SELECCIONAR_COLOR_BASE,
+} from "@/constants";
 import { Guante1 } from "utils/Guante1";
 import { Guante2 } from "utils/Guante2";
 
@@ -21,6 +28,20 @@ export default function GlovePreview() {
       <main className="h-screen w-screen">
         {paso === SELECCIONAR_BASE && (
           <SeleccionadorModelo
+            modelos={guantes}
+            setGuantePreview={setGuantePreview}
+            setPaso={setPaso}
+          />
+        )}
+        {paso === SELECCIONAR_PALMA && (
+          <SeleccionadorPalma
+            modelos={guantes}
+            setGuantePreview={setGuantePreview}
+            setPaso={setPaso}
+          />
+        )}
+        {paso === SELECCIONAR_LATIGO && (
+          <SeleccionadorLatigo
             modelos={guantes}
             setGuantePreview={setGuantePreview}
             setPaso={setPaso}
