@@ -4,7 +4,9 @@ import Personalizador from "@/components/Personalizador/Personalizador";
 import SeleccionadorModelo from "@/components/SeleccionadorModelo/SeleccionadorModelo";
 import SeleccionadorPalma from "@/components/SeleccionadorPalma/SeleccionadorPalma";
 import SeleccionadorLatigo from "@/components/SeleccionadorLatigo/SeleccionadorLatigo";
+import SeleccionadorDeporte from "@/components/SeleccionadorDeporte/SeleccionadorDeporte";
 import {
+  SELECCIONAR_DEPORTE,
   SELECCIONAR_BASE,
   SELECCIONAR_PALMA,
   SELECCIONAR_LATIGO,
@@ -15,7 +17,7 @@ import { Guante2 } from "utils/Guante2";
 
 export default function GlovePreview() {
   const [guantePreview, setGuantePreview] = useState({});
-  const [paso, setPaso] = useState(SELECCIONAR_BASE);
+  const [paso, setPaso] = useState(SELECCIONAR_DEPORTE);
   const guantes = [Guante1, Guante2];
   return (
     <>
@@ -26,6 +28,9 @@ export default function GlovePreview() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="h-screen w-screen">
+        {paso === SELECCIONAR_DEPORTE && (
+          <SeleccionadorDeporte setPaso={setPaso} />
+        )}
         {paso === SELECCIONAR_BASE && (
           <SeleccionadorModelo
             modelos={guantes}
