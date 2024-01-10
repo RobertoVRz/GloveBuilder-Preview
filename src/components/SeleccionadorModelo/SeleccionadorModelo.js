@@ -1,6 +1,10 @@
 import React from "react";
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import CardBase from "@/components/Cards/CardBase";
 import { SELECCIONAR_COLOR_BASE } from "@/constants";
+
+
 
 export default function SeleccionadorModelo({
   modelos,
@@ -16,10 +20,19 @@ export default function SeleccionadorModelo({
     <div className="h-full flex flex-col items-center justify-center">
       <h1 className="text-7xl font-bold mb-20">Selecciona un modelo</h1>
       <div className="flex flex-row justify-center items-center">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={10}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+        ></Swiper>
         {modelos.map((modelo) => (
-          <button key={modelo} onClick={() => handleSelection(modelo)}>
-            <CardBase key={modelo} modelo={modelo} setPaso={setPaso} />
-          </button>
+          <SwiperSlide>
+            <button key={modelo} onClick={() => handleSelection(modelo)}>
+              <CardBase key={modelo} modelo={modelo} setPaso={setPaso} />
+            </button>
+          </SwiperSlide>
         ))}
       </div>
     </div>
