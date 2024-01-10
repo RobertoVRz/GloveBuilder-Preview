@@ -18,7 +18,6 @@ function SeleccionadorDeporte({ setGuantePreview, setPaso }) {
   };
 
   const handleSelection = (modelo) => {
-    setGuantePreview(modelo);
     setPaso(SELECCIONAR_BASE);
   };
 
