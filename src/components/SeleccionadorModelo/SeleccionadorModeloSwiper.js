@@ -26,7 +26,7 @@ export default function SeleccionadorModeloSwiper({
           pagination={{ clickable: true }}
         >
           {modelos.map((modelo) => (
-            <SwiperSlide>
+            <SwiperSlide key={modelo}>
               <button key={modelo} onClick={() => handleSelection(modelo)}>
                 <CardBase key={modelo} modelo={modelo} setPaso={setPaso} />
               </button>
